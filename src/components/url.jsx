@@ -1,19 +1,21 @@
 export default function Url() {
   return (
     <div>
-      <div className="urlContainer">
-        <div className="urlInputContainer">
-          <input type="text" placeholder="Shorten a link here" />
-          <span className="errorMessage"></span>
+      <div>
+        <div className="urlContainer">
+          <div className="urlInputContainer">
+            <input type="text" placeholder="Shorten a link here" />
+            <span className="errorMessage"></span>
+          </div>
+          <div className="urlBtnContainer">
+            <button>Shorten It</button>
+          </div>
         </div>
-        <div className="urlBtnContainer">
-          <button>Shorten It</button>
+        <div className="urlItemContainer">
+          <UrlItem
+            link={{ originalUrl: "originalUrl", shortenedUrl: "shortenedUrl" }}
+          />
         </div>
-      </div>
-      <div className="urlItemContainer">
-        <UrlItem
-          link={{ originalUrl: "originalUrl", shortenedUrl: "shortenedUrl" }}
-        />
       </div>
     </div>
   );
