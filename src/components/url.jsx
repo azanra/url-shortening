@@ -1,10 +1,18 @@
+import { useState } from "react";
+
 export default function Url() {
+  const [urlLink, setUrlLink] = useState("");
   return (
     <div>
       <div>
         <div className="urlContainer">
           <div className="urlInputContainer">
-            <input type="text" placeholder="Shorten a link here" />
+            <input
+              type="text"
+              placeholder="Shorten a link here"
+              value={urlLink}
+              onChange={(e) => setUrlLink(e.target.value)}
+            />
             <span className="errorMessage"></span>
           </div>
           <div className="urlBtnContainer">
