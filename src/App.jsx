@@ -1,4 +1,5 @@
 import "./App.css";
+import GetStarted from "./components/getStarted";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Info from "./components/info";
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Url />
       <Info />
+      <GetStarted />
     </>
   );
 }
