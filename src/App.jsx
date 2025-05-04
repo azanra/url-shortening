@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/header";
 import Hero from "./components/hero";
+import Info from "./components/info";
 import Url from "./components/url";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Hero />
       <Url />
+      <Info />
     </>
   );
 }
