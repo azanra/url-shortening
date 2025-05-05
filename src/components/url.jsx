@@ -1,7 +1,14 @@
 import { useState } from "react";
 
 export default function Url() {
+  const [linkList, setLinkList] = useState([]);
   const [urlLink, setUrlLink] = useState("");
+
+  const handleLinkList = () => {
+    const originalList = JSON.parse(JSON.stringify(linkList));
+    originalList.push(urlLink);
+    setLinkList(originalList);
+  };
   return (
     <div>
       <div>
@@ -16,7 +23,7 @@ export default function Url() {
             <span className="errorMessage"></span>
           </div>
           <div className="urlBtnContainer">
-            <button>Shorten It</button>
+            <button onClick={handleLinkList}>Shorten It</button>
           </div>
         </div>
         <div className="urlItemContainer">
