@@ -1,13 +1,18 @@
 import { useState } from "react";
+import urlClient from "../client/urlClient.js";
 
 export default function Url() {
-  const [linkList, setLinkList] = useState([]);
-  const [urlLink, setUrlLink] = useState("");
+  const [url, setUrl] = useState([]);
+  const [link, setLink] = useState("");
 
-  const handleLinkList = () => {
-    const originalList = JSON.parse(JSON.stringify(linkList));
-    originalList.push(urlLink);
-    setLinkList(originalList);
+  const handleUrl = () => {
+    setUrl([
+      ...url,
+      {
+        originalUrl: link,
+        shortenedUrl: urlClient(link),
+      },
+    ]);
   };
   return (
     <div>
@@ -17,13 +22,13 @@ export default function Url() {
             <input
               type="text"
               placeholder="Shorten a link here"
-              value={urlLink}
-              onChange={(e) => setUrlLink(e.target.value)}
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
             />
             <span className="errorMessage"></span>
           </div>
           <div className="urlBtnContainer">
-            <button onClick={handleLinkList}>Shorten It</button>
+            <button onClick={handleUrl}>Shorten It</button>
           </div>
         </div>
         <div className="urlItemContainer">
