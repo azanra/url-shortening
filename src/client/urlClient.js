@@ -15,9 +15,7 @@ export default async function urlClient(originalUrl) {
     body: JSON.stringify(data),
   };
 
-  let shortenedUrl;
-
-  fetch(API_URL, requestOption)
+  const response = await fetch(API_URL, requestOption)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed, response is not ok");
@@ -26,10 +24,10 @@ export default async function urlClient(originalUrl) {
     })
     .then((data) => {
       console.log(data);
-      shortenedUrl = data.data.tiny_url;
+      return data.data.tiny_url;
     })
     .catch((error) => {
       console.log("Error", error);
     });
-  return shortenedUrl;
+  return response;
 }
