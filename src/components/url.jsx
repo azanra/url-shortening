@@ -1,6 +1,8 @@
 import { useState } from "react";
 import urlClient from "../client/urlClient.js";
 
+let lastId = 0;
+
 export default function Url() {
   const [url, setUrl] = useState([]);
   const [link, setLink] = useState("");
@@ -9,10 +11,12 @@ export default function Url() {
     setUrl([
       ...url,
       {
+        id: lastId++,
         originalUrl: link,
-        shortenedUrl: urlClient(link),
+        shortenedUrl: "shortened url",
       },
     ]);
+    console.log(lastId);
   };
   return (
     <div>
@@ -32,9 +36,10 @@ export default function Url() {
           </div>
         </div>
         <div className="urlItemContainer">
-          <UrlItem
-            link={{ originalUrl: "originalUrl", shortenedUrl: "shortenedUrl" }}
-          />
+          {url.length > 0 &&
+            url.map((item) => {
+              return <UrlItem link={item} />;
+            })}
         </div>
       </div>
     </div>
