@@ -8,15 +8,23 @@ export default function Url() {
   const [link, setLink] = useState("");
 
   const handleUrl = () => {
-    setUrl([
-      ...url,
-      {
-        id: lastId++,
-        originalUrl: link,
-        shortenedUrl: "shortened url",
-      },
-    ]);
-    console.log(lastId);
+    if (isValidUrl(link)) {
+      setUrl([
+        ...url,
+        {
+          id: lastId++,
+          originalUrl: link,
+          shortenedUrl: "shortened url",
+        },
+      ]);
+    } else {
+      alert("URL is not valid");
+    }
+  };
+
+  const isValidUrl = (link) => {
+    const result = URL.canParse(link);
+    return result;
   };
   return (
     <div>
@@ -38,7 +46,7 @@ export default function Url() {
         <div className="urlItemContainer">
           {url.length > 0 &&
             url.map((item) => {
-              return <UrlItem link={item} />;
+              return <UrlItem link={item} key={item.id} />;
             })}
         </div>
       </div>
