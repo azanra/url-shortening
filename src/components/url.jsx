@@ -6,6 +6,7 @@ let lastId = 0;
 export default function Url() {
   const [url, setUrl] = useState([]);
   const [link, setLink] = useState("");
+  const [isEmpty, setIsEmpty] = useState(false);
 
   const handleUrl = () => {
     if (isValidUrl(link)) {
@@ -17,14 +18,26 @@ export default function Url() {
           shortenedUrl: "shortened url",
         },
       ]);
+      setIsEmpty(false);
+    } else if (isUrlEmpty(link)) {
+      setIsEmpty(true);
     } else {
       alert("URL is not valid");
+      setIsEmpty(false);
     }
   };
 
   const isValidUrl = (link) => {
     const result = URL.canParse(link);
     return result;
+  };
+
+  const isUrlEmpty = (link) => {
+    if (link === "") {
+      return true;
+    } else {
+      return false;
+    }
   };
   return (
     <div>
@@ -37,7 +50,11 @@ export default function Url() {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />
-            <span className="errorMessage"></span>
+            <p className="errorMessage">
+              {isEmpty && (
+                <span style={{ color: "red" }}>Please add a link</span>
+              )}
+            </p>
           </div>
           <div className="urlBtnContainer">
             <button onClick={handleUrl}>Shorten It</button>
