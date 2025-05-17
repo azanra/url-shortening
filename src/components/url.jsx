@@ -72,16 +72,21 @@ export default function Url() {
 }
 
 function UrlItem({ link }) {
+  const { originalUrl, shortenedUrl } = link;
   return (
     <div>
       <div>
-        <p>{link.originalUrl}</p>
+        <p>{originalUrl}</p>
       </div>
       <div>
-        <p>{link.shortenedUrl}</p>
+        <p>{shortenedUrl}</p>
       </div>
       <div>
-        <button>Copy</button>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(shortenedUrl);
+          }}
+        ></button>
       </div>
     </div>
   );
