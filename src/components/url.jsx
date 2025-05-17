@@ -72,6 +72,7 @@ export default function Url() {
 }
 
 function UrlItem({ link }) {
+  const [isCopied, setIsCopied] = useState(false);
   const { originalUrl, shortenedUrl } = link;
   return (
     <div>
@@ -85,8 +86,14 @@ function UrlItem({ link }) {
         <button
           onClick={() => {
             navigator.clipboard.writeText(shortenedUrl);
+            setIsCopied(true);
+            setTimeout(() => {
+              setIsCopied(false);
+            }, 3000);
           }}
-        ></button>
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );
