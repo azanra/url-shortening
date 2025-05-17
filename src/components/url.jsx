@@ -18,12 +18,13 @@ export default function Url() {
           shortenedUrl: "shortened url",
         },
       ]);
-      setIsEmpty(false);
     } else if (isUrlEmpty(link)) {
       setIsEmpty(true);
+      setTimeout(() => {
+        setIsEmpty(false);
+      }, 3000);
     } else {
       alert("URL is not valid");
-      setIsEmpty(false);
     }
   };
 
