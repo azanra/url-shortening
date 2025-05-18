@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import urlClient from "../client/urlClient.js";
 
 let lastId = 0;
@@ -7,6 +7,11 @@ export default function Url() {
   const [url, setUrl] = useState([]);
   const [link, setLink] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
+
+  useEffect(() => {
+    const stringUrl = JSON.stringify(url);
+    localStorage.setItem("url", stringUrl);
+  }, [url]);
 
   const handleUrl = () => {
     if (isValidUrl(link)) {
