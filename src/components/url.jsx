@@ -9,6 +9,14 @@ export default function Url() {
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
+    const urlLocal = JSON.parse(localStorage.getItem("url"));
+    if (urlLocal === null) {
+      return;
+    }
+    urlLocal.length > 0 && setUrl(urlLocal);
+  }, []);
+
+  useEffect(() => {
     const stringUrl = JSON.stringify(url);
     localStorage.setItem("url", stringUrl);
   }, [url]);
