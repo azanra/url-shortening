@@ -4,6 +4,7 @@ import urlClient from "../client/urlClient.js";
 let lastId = 0;
 
 export default function UrlWrapper() {
+  localStorage.removeItem("url");
   const initialUrl = JSON.parse(localStorage.getItem("url"));
   return <Url initalUrl={initialUrl === null ? [] : initialUrl} />;
 }
@@ -13,6 +14,7 @@ function Url({ initalUrl }) {
   const [link, setLink] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
 
+  console.log(url);
   useEffect(() => {
     if (url.length > 0) {
       const stringUrl = JSON.stringify(url);
@@ -20,14 +22,14 @@ function Url({ initalUrl }) {
     }
   }, [url]);
 
-  const handleUrl = () => {
+  const handleUrl = async () => {
     if (isValidUrl(link)) {
       setUrl([
         ...url,
         {
           id: lastId++,
           originalUrl: link,
-          shortenedUrl: urlClient(link),
+          shortenedUrl: await urlClient(link),
         },
       ]);
     } else if (isUrlEmpty(link)) {

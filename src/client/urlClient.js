@@ -29,5 +29,6 @@ export default async function urlClient(originalUrl) {
     .catch((error) => {
       console.log("Error", error);
     });
+
   return response;
 }
