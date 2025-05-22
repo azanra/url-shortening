@@ -3,22 +3,21 @@ import urlClient from "../client/urlClient.js";
 
 let lastId = 0;
 
-export default function Url() {
-  const [url, setUrl] = useState([]);
+export default function UrlWrapper() {
+  const initialUrl = JSON.parse(localStorage.getItem("url"));
+  return <Url initalUrl={initialUrl === null ? [] : initialUrl} />;
+}
+
+function Url({ initalUrl }) {
+  const [url, setUrl] = useState(initalUrl);
   const [link, setLink] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
-    const urlLocal = JSON.parse(localStorage.getItem("url"));
-    if (urlLocal === null) {
-      return;
+    if (url.length > 0) {
+      const stringUrl = JSON.stringify(url);
+      localStorage.setItem("url", stringUrl);
     }
-    urlLocal.length > 0 && setUrl(urlLocal);
-  }, []);
-
-  useEffect(() => {
-    const stringUrl = JSON.stringify(url);
-    localStorage.setItem("url", stringUrl);
   }, [url]);
 
   const handleUrl = () => {
@@ -28,7 +27,7 @@ export default function Url() {
         {
           id: lastId++,
           originalUrl: link,
-          shortenedUrl: "shortened url",
+          shortenedUrl: urlClient(link),
         },
       ]);
     } else if (isUrlEmpty(link)) {
