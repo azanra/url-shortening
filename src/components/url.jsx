@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import urlClient from "../client/urlClient.js";
 
-let lastId = 0;
-
 export default function UrlWrapper() {
-  localStorage.removeItem("url");
   const initialUrl = JSON.parse(localStorage.getItem("url"));
   return <Url initalUrl={initialUrl === null ? [] : initialUrl} />;
 }
@@ -14,7 +11,6 @@ function Url({ initalUrl }) {
   const [link, setLink] = useState("");
   const [isEmpty, setIsEmpty] = useState(false);
 
-  console.log(url);
   useEffect(() => {
     if (url.length > 0) {
       const stringUrl = JSON.stringify(url);
@@ -27,7 +23,7 @@ function Url({ initalUrl }) {
       setUrl([
         ...url,
         {
-          id: lastId++,
+          id: url.length,
           originalUrl: link,
           shortenedUrl: await urlClient(link),
         },
