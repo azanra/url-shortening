@@ -23,10 +23,19 @@
 
 body {
   font-family: "poppins", var(--system-ui);
+  font-size: var(--Font-size);
 }
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button {
+  padding: 8px 24px;
+  background-color: var(--Cyan);
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
 }
