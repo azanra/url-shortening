@@ -12,6 +12,7 @@
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --Cyan: hsl(180, 66%, 49%);
+  --Cyan-Hover: hsl(180, 54%, 65%);
   --Dark-Violet: hsl(257, 27%, 26%);
   --Red: hsl(0, 87%, 67%);
   --Gray: hsl(0, 0%, 75%);
@@ -37,5 +38,14 @@ body {
   background-color: var(--Cyan);
   border-radius: 20px;
   color: white;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: var(--Cyan-Hover);
+}
+
+.nav:hover {
+  color: var(--Very-Dark-Violet);
   font-weight: bold;
 }
