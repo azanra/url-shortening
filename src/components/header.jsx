@@ -2,9 +2,9 @@ import Logo from "../assets/images/logo.svg";
 
 export default function Header() {
   return (
-    <div className="headerContainer">
-      <div className="header">
-        <div className="nav">
+    <div className="headerContainer flex justify-center">
+      <div className="header flex w-[80%] justify-between">
+        <div className="nav flex">
           <div className="headerlogo">
             <img src={Logo} alt="Logo Image" />
           </div>
