@@ -53,14 +53,14 @@ function Url({ initalUrl }) {
   return (
     <div className="center">
       <div className="w-[70%]">
-        <div className="urlContainer urlInput flex justify-between p-16">
+        <div className="urlContainer urlInput flex justify-between p-16 rounded-xl">
           <div className="urlInputContainer  w-[80%]">
             <input
               type="text"
               placeholder="Shorten a link here"
               value={link}
               onChange={(e) => setLink(e.target.value)}
-              className="bg-white h-[50px] w-full"
+              className="bg-white h-[50px] w-full rounded-xl p-8 border-1 border-(--Gray)"
             />
             <p className="errorMessage">
               {isEmpty && (
@@ -69,7 +69,9 @@ function Url({ initalUrl }) {
             </p>
           </div>
           <div className="urlBtnContainer">
-            <button onClick={handleUrl}>Shorten It</button>
+            <button onClick={handleUrl} className="button h-[66px] w-[215px]">
+              Shorten It!
+            </button>
           </div>
         </div>
         <div className="urlItemContainer">
