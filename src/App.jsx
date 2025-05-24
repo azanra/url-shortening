@@ -11,8 +11,10 @@ function App() {
     <div>
       <Header />
       <Hero />
-      <UrlWrapper />
-      <Info />
+      <div className="bg-(--Gray-Light)">
+        <UrlWrapper />
+        <Info />
+      </div>
       <GetStarted />
       <Footer />
     </div>

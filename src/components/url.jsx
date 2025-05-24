@@ -51,15 +51,16 @@ function Url({ initalUrl }) {
     }
   };
   return (
-    <div>
-      <div>
-        <div className="urlContainer">
-          <div className="urlInputContainer">
+    <div className="center">
+      <div className="w-[70%]">
+        <div className="urlContainer urlInput flex justify-between p-16">
+          <div className="urlInputContainer  w-[80%]">
             <input
               type="text"
               placeholder="Shorten a link here"
               value={link}
               onChange={(e) => setLink(e.target.value)}
+              className="bg-white h-[50px] w-full"
             />
             <p className="errorMessage">
               {isEmpty && (
