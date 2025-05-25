@@ -90,15 +90,23 @@ function UrlItem({ link }) {
   const [isCopied, setIsCopied] = useState(false);
   const { originalUrl, shortenedUrl } = link;
   return (
-    <div className="flex gap-8 p-6">
-      <div className="w-[65%]">
+    <div className="flex gap-8 p-6 mt-6 bg-white rounded-xl">
+      <div className="w-[65%] flex items-center">
         <p>{originalUrl}</p>
       </div>
-      <div className="w-[20%]">
-        <p>{shortenedUrl}</p>
+      <div className="w-[20%] flex items-center">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href={shortenedUrl}
+          className="text-(--Cyan)"
+        >
+          {shortenedUrl}
+        </a>
       </div>
       <div>
         <button
+          className="copy"
           onClick={() => {
             navigator.clipboard.writeText(shortenedUrl);
             setIsCopied(true);
