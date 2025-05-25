@@ -90,11 +90,11 @@ function UrlItem({ link }) {
   const [isCopied, setIsCopied] = useState(false);
   const { originalUrl, shortenedUrl } = link;
   return (
-    <div>
-      <div>
+    <div className="flex gap-8 p-6">
+      <div className="w-[65%]">
         <p>{originalUrl}</p>
       </div>
-      <div>
+      <div className="w-[20%]">
         <p>{shortenedUrl}</p>
       </div>
       <div>
