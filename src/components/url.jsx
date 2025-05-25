@@ -51,8 +51,8 @@ function Url({ initalUrl }) {
     }
   };
   return (
-    <div className="center mt-32">
-      <div className="w-[70%]">
+    <div className="center mt-48">
+      <div className="w-[70%] relative bottom-28">
         <div className="urlContainer urlInput p-16 rounded-xl h-[225px]">
           <div className="flex justify-between items-center pt-4">
             <div className="urlInputContainer  w-[80%]">
