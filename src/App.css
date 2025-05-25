@@ -28,7 +28,8 @@ body {
   font-size: var(--Font-size);
 }
 
-.center {
+.center,
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,5 +53,6 @@ body {
 }
 
 .urlInput {
-  background: no-repeat url("../src/assets/images/bg-boost-desktop.svg");
+  background: var(--Dark-Violet) no-repeat
+    url("../src/assets/images/bg-boost-desktop.svg");
 }

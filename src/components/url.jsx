@@ -51,28 +51,29 @@ function Url({ initalUrl }) {
     }
   };
   return (
-    <div className="center">
+    <div className="center mt-32">
       <div className="w-[70%]">
-        <div className="urlContainer urlInput flex justify-between p-16 rounded-xl">
-          <div className="urlInputContainer  w-[80%]">
-            <input
-              type="text"
-              placeholder="Shorten a link here"
-              value={link}
-              onChange={(e) => setLink(e.target.value)}
-              className="bg-white h-[50px] w-full rounded-xl p-8 border-1 border-(--Gray)"
-            />
-            <p className="errorMessage">
-              {isEmpty && (
-                <span style={{ color: "red" }}>Please add a link</span>
-              )}
-            </p>
+        <div className="urlContainer urlInput p-16 rounded-xl h-[225px]">
+          <div className="flex justify-between items-center pt-4">
+            <div className="urlInputContainer  w-[80%]">
+              <input
+                type="text"
+                placeholder="Shorten a link here"
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+                required
+                className="bg-white h-[50px] w-full rounded-xl p-8 border-1 border-(--Gray)"
+              />
+            </div>
+            <div className="urlBtnContainer">
+              <button onClick={handleUrl} className="button h-[66px] w-[215px]">
+                Shorten It!
+              </button>
+            </div>
           </div>
-          <div className="urlBtnContainer">
-            <button onClick={handleUrl} className="button h-[66px] w-[215px]">
-              Shorten It!
-            </button>
-          </div>
+          <i className="errorMessage absolute mt-3 ml-1">
+            {isEmpty && <span style={{ color: "red" }}>Please add a link</span>}
+          </i>
         </div>
         <div className="urlItemContainer">
           {url.length > 0 &&
