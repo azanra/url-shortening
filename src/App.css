@@ -44,15 +44,22 @@ body {
   font-weight: bold;
 }
 
-.copy {
+.copy,
+.copyClick {
   padding: 4px 18px;
   border-radius: 4px;
   width: 100px;
   font-size: 16px;
 }
 
-.button:hover {
+.button:hover,
+.copy:hover {
   background-color: var(--Cyan-Hover);
+}
+
+.copyClick {
+  background-color: var(--Dark-Violet);
+  color: white;
 }
 
 .nav:hover {

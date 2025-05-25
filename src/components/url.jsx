@@ -106,7 +106,7 @@ function UrlItem({ link }) {
       </div>
       <div>
         <button
-          className="copy"
+          className={`${isCopied ? "bg-(--Dark-Violet) copyClick" : "copy"}`}
           onClick={() => {
             navigator.clipboard.writeText(shortenedUrl);
             setIsCopied(true);
