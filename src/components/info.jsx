@@ -18,6 +18,7 @@ export default function Info() {
             </p>
           </div>
         </div>
+        <div className="infoBar"></div>
         <div className="infoBody flex pb-80 gap-8 mt-10">
           {infoBody.map((item) => {
             position += 50;

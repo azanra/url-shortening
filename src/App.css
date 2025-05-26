@@ -71,3 +71,12 @@ body {
   background: var(--Dark-Violet) no-repeat
     url("../src/assets/images/bg-boost-desktop.svg");
 }
+
+.infoBar {
+  background-color: var(--Cyan);
+  height: 10px;
+  width: 70%;
+  border-radius: 5px;
+  position: absolute;
+  top: 1925px;
+}
