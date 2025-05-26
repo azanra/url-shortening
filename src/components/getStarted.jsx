@@ -1,12 +1,12 @@
 export default function GetStarted() {
   return (
-    <div>
+    <div className="center h-[250px] startBg">
       <div>
-        <div className="getStartedHeader">
+        <div className="getStartedHeader text-white font-black text-4xl">
           <h1>Boost your links today</h1>
         </div>
         <div className="getStartedBtnContainer">
-          <button>Get Started</button>
+          <button className="button">Get Started</button>
         </div>
       </div>
     </div>

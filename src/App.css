@@ -80,3 +80,8 @@ body {
   position: absolute;
   top: 1975px;
 }
+
+.startBg {
+  background: var(--Dark-Violet) center repeat-x
+    url("./assets/images/bg-boost-desktop.svg");
+}
