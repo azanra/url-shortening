@@ -5,7 +5,7 @@ export default function GetStarted() {
         <div className="getStartedHeader text-white font-black text-4xl">
           <h1>Boost your links today</h1>
         </div>
-        <div className="getStartedBtnContainer">
+        <div className="getStartedBtnContainer center mt-8">
           <button className="button">Get Started</button>
         </div>
       </div>
