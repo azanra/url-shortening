@@ -3,24 +3,32 @@ import detailedRecord from "../assets/images/icon-detailed-records.svg";
 import fullyCustomizable from "../assets/images/icon-fully-customizable.svg";
 
 export default function Info() {
+  let position = 0;
   return (
-    <div>
-      <div>
+    <div className="center">
+      <div className="w-[70%]">
         <div className="infoHeaderContainer">
-          <div className="infoHeader">
+          <div className="infoHeader center">
             <h1>Advanced Statistics</h1>
           </div>
-          <div className="infoText">
-            <p>
+          <div className="infoText center">
+            <p className="w-[40%] text-center">
               Track how your links are performing across the web with our
               advanced statistics dashboard.
             </p>
           </div>
         </div>
-        <div className="infoBody">
+        <div className="infoBody flex pb-80 gap-8">
           {infoBody.map((item) => {
+            position += 50;
             return (
-              <div key={item.header}>
+              <div
+                key={item.header}
+                style={{
+                  position: "relative",
+                  top: `${position}px`,
+                }}
+              >
                 <div className="bodyImg">
                   <img src={item.img} alt={item.alt} />
                 </div>
