@@ -6,12 +6,12 @@ import instagram from "../assets/images/icon-instagram.svg";
 
 export default function Footer() {
   return (
-    <div>
-      <div>
-        <div className="footerLogo">
-          <img src={logo} alt="Logo icon" />
+    <div className="bg-(--Very-Dark-Violet)">
+      <div className="flex">
+        <div className="footerLogo w-[40%] flex justify-center">
+          <img src={logo} alt="Logo icon" className="self-start mt-24" />
         </div>
-        <div className="footerNav">
+        <div className="footerNav w-[40%]">
           {footerNav.map((item) => {
             return (
               <div key={item.id}>
@@ -31,7 +31,7 @@ export default function Footer() {
             );
           })}
         </div>
-        <div className="footerLink">
+        <div className="footerLink flex gap-8 mt-24">
           {footerLink.map((item) => {
             return (
               <div key={item.alt}>
