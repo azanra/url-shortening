@@ -5,7 +5,7 @@ import fullyCustomizable from "../assets/images/icon-fully-customizable.svg";
 export default function Info() {
   let position = 0;
   return (
-    <div className="center">
+    <div className="center mt-10">
       <div className="w-[70%]">
         <div className="infoHeaderContainer">
           <div className="infoHeader center">
@@ -18,7 +18,7 @@ export default function Info() {
             </p>
           </div>
         </div>
-        <div className="infoBody flex pb-80 gap-8">
+        <div className="infoBody flex pb-80 gap-8 mt-10">
           {infoBody.map((item) => {
             position += 50;
             return (
@@ -28,14 +28,15 @@ export default function Info() {
                   position: "relative",
                   top: `${position}px`,
                 }}
+                className="bg-white rounded-md p-8"
               >
-                <div className="bodyImg">
+                <div className="bodyImg bg-(--Dark-Violet) w-fit rounded-[50%] p-6 absolute bottom-60">
                   <img src={item.img} alt={item.alt} />
                 </div>
-                <div className="bodyHeader">
+                <div className="bodyHeader mt-16">
                   <h1>{item.header}</h1>
                 </div>
-                <div className="bodyContent">
+                <div className="bodyContent mt-4 pb-2">
                   <p>{item.body}</p>
                 </div>
               </div>
