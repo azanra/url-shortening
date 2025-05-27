@@ -25,7 +25,10 @@ export default function Footer() {
                 <div>
                   {item.navLinks.map((link) => {
                     return (
-                      <div key={link} className="mb-2 text-(--Gray) text-sm">
+                      <div
+                        key={link}
+                        className="mb-2 text-(--Gray) text-sm hover:text-(--Cyan)"
+                      >
                         <a href="">{link}</a>
                       </div>
                     );
