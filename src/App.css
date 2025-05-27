@@ -85,3 +85,7 @@ body {
   background: var(--Dark-Violet) center no-repeat
     url("./assets/images/bg-boost-desktop.svg");
 }
+
+.footerLogo path {
+  fill: white;
+}
