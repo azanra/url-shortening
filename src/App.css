@@ -89,3 +89,7 @@ body {
 .footerLogo path {
   fill: white;
 }
+
+.externalNav path:hover {
+  fill: var(--Cyan);
+}
