@@ -11,17 +11,17 @@ export default function Footer() {
         <div className="footerLogo w-[40%] flex justify-center">
           <img src={logo} alt="Logo icon" className="self-start mt-24" />
         </div>
-        <div className="footerNav w-[40%]">
+        <div className="flex gap-32 mt-24 w-[40%] pb-24">
           {footerNav.map((item) => {
             return (
-              <div key={item.id}>
-                <div className="navHeaderContainer">
+              <div key={item.id} className="">
+                <div className="navHeaderContainer mb-4">
                   <h1>{item.navHeader}</h1>
                 </div>
                 <div>
                   {item.navLinks.map((link) => {
                     return (
-                      <div key={link}>
+                      <div key={link} className="mb-2">
                         <a href="">{link}</a>
                       </div>
                     );
